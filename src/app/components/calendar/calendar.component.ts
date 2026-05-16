@@ -29,7 +29,7 @@ export class CalendarComponent {
       return;
     }
 
-    container.scrollLeft = container.clientWidth * 2;
+    container.scrollLeft = this.getDayWidth(container) * 2;
     this.updateScrollState();
   }
 
@@ -40,7 +40,7 @@ export class CalendarComponent {
       return;
     }
 
-    const amount = container.clientWidth;
+    const amount = this.getDayWidth(container);
 
     container.scrollBy({
       left: direction === 'left' ? -amount : amount,
@@ -65,23 +65,21 @@ export class CalendarComponent {
 
   private buildScrollableDays(): CalendarDay[] {
     const today = new Date();
-    const monday = new Date(today);
-    const dayOfWeek = today.getDay();
-    const offset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+    today.setHours(0, 0, 0, 0);
+    today.setDate(today.getDate() - 7);
 
-    monday.setHours(0, 0, 0, 0);
-    monday.setDate(today.getDate() + offset);
-
-    monday.setDate(monday.getDate() - 14);
-
-    return Array.from({ length: 35 }, (_, index) => {
-      const date = new Date(monday);
-      date.setDate(monday.getDate() + index);
+    return Array.from({ length: 15 }, (_, index) => {
+      const date = new Date(today);
+      date.setDate(today.getDate() + index);
 
       return {
         label: date.toLocaleDateString('en-US', { weekday: 'short' }),
         date
       };
     });
+  }
+
+  private getDayWidth(container: HTMLDivElement): number {
+    return container.scrollWidth / this.days.length;
   }
 }
