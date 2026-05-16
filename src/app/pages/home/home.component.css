@@ -1,0 +1,40 @@
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-label {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #56724f;
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.page-copy {
+  margin: 0;
+  color: #52606d;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.page-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .page-layout {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+}

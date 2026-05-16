@@ -1,0 +1,110 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(180deg, #f5efe5 0%, #eef3ec 100%);
+  color: #1f2933;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand-block {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 4.5rem;
+  padding: 0.5rem 0.25rem;
+}
+
+.title-bars {
+  position: absolute;
+  inset: 50% auto auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.bar {
+  display: block;
+  width: 6.5rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+.bar-red {
+  background: #dc3f35;
+}
+
+.bar-green {
+  background: #3f8f4d;
+  margin-left: 0.85rem;
+}
+
+.bar-blue {
+  background: #2f6edb;
+  margin-left: 1.7rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  position: relative;
+  z-index: 1;
+  padding-left: 0.35rem;
+  color: #101a23;
+}
+
+.app-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.app-nav a {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  color: #1f2933;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(86, 114, 79, 0.18);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-nav a.active,
+.app-nav a:hover {
+  background: #56724f;
+  color: #fff;
+}
+
+.app-content {
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .app-shell {
+    padding: 2rem;
+  }
+
+  .brand-block {
+    min-height: 5rem;
+  }
+
+  .bar {
+    width: 8rem;
+    height: 0.85rem;
+  }
+
+  .app-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}

@@ -1,3 +1,21 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand-block">
+      <div class="title-bars" aria-hidden="true">
+        <span class="bar bar-red"></span>
+        <span class="bar bar-green"></span>
+        <span class="bar bar-blue"></span>
+      </div>
+      <h1>Draft Padel</h1>
+    </div>
 
+    <nav class="app-nav" aria-label="Primary navigation">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    </nav>
+  </header>
 
-<router-outlet />
+  <main class="app-content">
+    <router-outlet />
+  </main>
+</div>
