@@ -34,7 +34,7 @@ h2 {
 
 @media (min-width: 900px) {
   .page-layout {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: minmax(0, 1.55fr) minmax(15rem, 0.72fr);
     align-items: start;
   }
 }

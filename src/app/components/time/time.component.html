@@ -5,13 +5,15 @@
   </div>
 
   <div class="placeholder-grid" aria-label="Time slot placeholder">
-    <div>08:00 - 9:00</div>
-    <div>09:00 - 10:00</div>
-    <div>10:00 - 11:00</div>
-    <div>11:00 - 12:00</div>
-    <div>12:00 - 13:00</div>
-    <div>13:00 - 14:00</div>
-    <div>14:00 - 15:00</div>
-    <div>15:00 - 16:00</div>
+    @for (slot of slots; track slot.id) {
+      <button
+        type="button"
+        class="time-slot"
+        [class.selected]="isSelected(slot)"
+        (click)="selectSlot(slot)"
+      >
+        {{ slot.label }}
+      </button>
+    }
   </div>
 </section>

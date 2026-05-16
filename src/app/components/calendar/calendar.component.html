@@ -11,10 +11,15 @@
 
     <div #dayScroller class="day-scroller" (scroll)="updateScrollState()" aria-label="Calendar placeholder">
       @for (day of days; track day.date.toISOString()) {
-        <div class="day-card">
+        <button
+          type="button"
+          class="day-card"
+          [class.selected]="isSelected(day)"
+          (click)="selectDay(day)"
+        >
           <span class="day-name">{{ day.label }}</span>
           <span class="day-date">{{ day.date | date:'M/d/yyyy' }}</span>
-        </div>
+        </button>
       }
     </div>
 

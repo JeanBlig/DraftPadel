@@ -1,7 +1,7 @@
 import { DatePipe } from '@angular/common';
-import { Component, ElementRef, ViewChild, input } from '@angular/core';
+import { Component, ElementRef, ViewChild, input, output } from '@angular/core';
 
-interface CalendarDay {
+export interface CalendarDay {
   label: string;
   date: Date;
 }
@@ -15,6 +15,8 @@ interface CalendarDay {
 })
 export class CalendarComponent {
   title = input('Calendar');
+  selectedDate = input<Date | null>(null);
+  dateSelected = output<Date>();
   days = this.buildScrollableDays();
   canScrollLeft = true;
   canScrollRight = true;
@@ -49,6 +51,16 @@ export class CalendarComponent {
     window.setTimeout(() => this.updateScrollState(), 250);
   }
 
+  selectDay(day: CalendarDay): void {
+    this.dateSelected.emit(day.date);
+  }
+
+  isSelected(day: CalendarDay): boolean {
+    const selected = this.selectedDate();
+
+    return !!selected && this.isSameDay(day.date, selected);
+  }
+
   updateScrollState(): void {
     const container = this.dayScroller?.nativeElement;
 
@@ -81,5 +93,13 @@ export class CalendarComponent {
 
   private getDayWidth(container: HTMLDivElement): number {
     return container.scrollWidth / this.days.length;
+  }
+
+  private isSameDay(left: Date, right: Date): boolean {
+    return (
+      left.getFullYear() === right.getFullYear() &&
+      left.getMonth() === right.getMonth() &&
+      left.getDate() === right.getDate()
+    );
   }
 }
