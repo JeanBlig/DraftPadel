@@ -4,14 +4,22 @@
     <h2>{{ title() }}</h2>
   </div>
 
-  <div class="placeholder-grid" aria-label="Calendar placeholder">
-    <div>Mon</div>
-    <div>Tue</div>
-    <div>Wed</div>
-    <div>Thu</div>
-    <div>Fri</div>
-    <div>Sat</div>
-    <div>Sun</div>
+  <div class="calendar-strip">
+    <button type="button" class="scroll-button" [disabled]="!canScrollLeft" (click)="scrollDays('left')" aria-label="Scroll days left">
+      &#8249;
+    </button>
+
+    <div #dayScroller class="day-scroller" (scroll)="updateScrollState()" aria-label="Calendar placeholder">
+      @for (day of days; track day.date.toISOString()) {
+        <div class="day-card">
+          <span class="day-name">{{ day.label }}</span>
+          <span class="day-date">{{ day.date | date:'M/d/yyyy' }}</span>
+        </div>
+      }
+    </div>
+
+    <button type="button" class="scroll-button" [disabled]="!canScrollRight" (click)="scrollDays('right')" aria-label="Scroll days right">
+      &#8250;
+    </button>
   </div>
-  
 </section>
