@@ -8,4 +8,9 @@ import { Component, input } from '@angular/core';
 })
 export class CourtComponent {
   title = input('Court');
+  selectedSection: 'top' | 'bottom' | null = null;
+
+  selectSection(section: 'top' | 'bottom'): void {
+    this.selectedSection = section;
+  }
 }

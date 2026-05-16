@@ -4,17 +4,32 @@
   </div>
 
   <div class="court-grid" aria-label="Court grid">
-    <div class="court-tile">
-      <span>Court 1</span>
+    <div class="court-tile split-court">
+      <button
+        type="button"
+        class="court-half"
+        [class.selected]="selectedSection === 'top'"
+        (click)="selectSection('top')"
+      >
+        
+      </button>
+      <button
+        type="button"
+        class="court-half"
+        [class.selected]="selectedSection === 'bottom'"
+        (click)="selectSection('bottom')"
+      >
+        
+      </button>
     </div>
     <div class="court-tile">
-      <span>Court 2</span>
+      <span>Comming Soon</span>
     </div>
     <div class="court-tile">
-      <span>Court 3</span>
+      <span>Commong Soon</span>
     </div>
     <div class="court-tile">
-      <span>Court 4</span>
+      <span>Comming Soon</span>
     </div>
   </div>
 </section>

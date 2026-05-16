@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: 0 auto;
+  justify-self: start;
+}
+
+.card {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  box-shadow: 0 20px 40px rgba(31, 41, 51, 0.08);
+}
+
+.card-header {
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.booking-details {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.booking-row {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.9rem;
+  background: #f4f7f2;
+  border: 1px solid rgba(86, 114, 79, 0.18);
+}
+
+.booking-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #56724f;
+}
+
+.booking-value {
+  color: #1f2933;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.booking-button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 0;
+  border-radius: 1rem;
+  background: #56724f;
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.booking-button:hover {
+  transform: translateY(-2px);
+  background: #44603e;
+}
