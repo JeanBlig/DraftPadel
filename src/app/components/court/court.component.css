@@ -1,7 +1,14 @@
-.card {
-  width: min(100%, 18rem);
+:host {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
   justify-self: center;
-  padding: 1.1rem;
+}
+
+.card {
+  width: 100%;
+  padding: 1.5rem;
   border-radius: 1.5rem;
   background: #fff;
   border: 1px solid rgba(31, 41, 51, 0.08);
@@ -9,41 +16,35 @@
 }
 
 .card-header {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .court-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 0.45rem;
 }
 
 .court-tile {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 7 / 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 1.25rem;
+  border-radius: 0.9rem;
   background: linear-gradient(135deg, #86b776 0%, #4f7d43 100%);
   border: 1px solid rgba(31, 41, 51, 0.12);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
 }
 
 .court-tile span {
   color: #fff;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-@media (max-width: 899px) {
-  .card {
-    width: 100%;
-  }
 }
