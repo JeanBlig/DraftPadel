@@ -1,0 +1,29 @@
+<section class="card">
+  <div class="card-header">
+    <h2>{{ title() }}</h2>
+  </div>
+
+  <div class="booking-details" aria-label="Booking summary">
+    <div class="booking-row">
+      <span class="booking-label">Day</span>
+      <span class="booking-value">{{ displayDate }}</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-label">Time</span>
+      <span class="booking-value">{{ displayTime }}</span>
+    </div>
+    <div class="booking-row">
+      <span class="booking-label">Court</span>
+      <span class="booking-value">{{ displayCourt }}</span>
+    </div>
+  </div>
+
+  <button type="button" class="booking-button" [disabled]="!isBookingReady">
+    {{ bookingButtonLabel }}
+  </button>
+</section>
+
+<section class="description-card" aria-label="Event description">
+  <p class="description-label">{{ eventDescriptionTitle }}</p>
+  <p class="description-text">{{ eventDescriptionText }}</p>
+</section>

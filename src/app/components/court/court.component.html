@@ -1,10 +1,51 @@
 <section class="card">
   <div class="card-header">
-    <p class="card-label">Court Component</p>
-    <h2>{{ title() }}</h2>
+    <h2>{{ displayTitle }}</h2>
   </div>
 
-  <div class="court-placeholder" aria-label="Court placeholder">
-    <div class="court-lines"></div>
+  <div class="court-grid" aria-label="Court grid">
+    <div class="court-tile split-court" [class.full-court-selected]="isFullCourtSelected">
+      <button
+        type="button"
+        class="court-quarter"
+        [class.selected]="isSectionSelected('top-left')"
+        (click)="toggleSection('top-left')"
+        aria-label="Top left court section"
+      >
+      </button>
+      <button
+        type="button"
+        class="court-quarter"
+        [class.selected]="isSectionSelected('top-right')"
+        (click)="toggleSection('top-right')"
+        aria-label="Top right court section"
+      >
+      </button>
+      <button
+        type="button"
+        class="court-quarter"
+        [class.selected]="isSectionSelected('bottom-left')"
+        (click)="toggleSection('bottom-left')"
+        aria-label="Bottom left court section"
+      >
+      </button>
+      <button
+        type="button"
+        class="court-quarter"
+        [class.selected]="isSectionSelected('bottom-right')"
+        (click)="toggleSection('bottom-right')"
+        aria-label="Bottom right court section"
+      >
+      </button>
+    </div>
+    <div class="court-tile">
+      <span>Comming Soon</span>
+    </div>
+    <div class="court-tile">
+      <span>Commong Soon</span>
+    </div>
+    <div class="court-tile">
+      <span>Comming Soon</span>
+    </div>
   </div>
 </section>

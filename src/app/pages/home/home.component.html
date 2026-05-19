@@ -6,8 +6,25 @@
 
 <section class="page-layout">
   <div class="page-stack">
-    <app-calendar title="Day" />
-    <app-time title="Time Slots" />
+    <app-calendar
+      title="Day"
+      [selectedDate]="selectedDate"
+      (dateSelected)="onDateSelected($event)"
+    />
+    <app-time
+      title="Time Slots"
+      [selectedSlot]="selectedTimeSlot"
+      (slotSelected)="onTimeSlotSelected($event)"
+    />
   </div>
-  <app-court title="Featured Court" />
+
+  <section class="booking-panel">
+    <app-court title="Featured Court" (courtTypeSelected)="onCourtTypeSelected($event)" />
+    <app-booking
+      title="Booking"
+      [selectedDate]="selectedDate"
+      [selectedTime]="selectedTimeSlot"
+      [selectedCourt]="selectedCourtType"
+    />
+  </section>
 </section>

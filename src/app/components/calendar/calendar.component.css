@@ -24,22 +24,89 @@ h2 {
   font-size: 1.4rem;
 }
 
-.placeholder-grid {
+.calendar-strip {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
   gap: 0.75rem;
 }
 
-.placeholder-grid div {
+.scroll-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: #56724f;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scroll-button:hover {
+  transform: scale(1.05);
+  background: #44603e;
+}
+
+.scroll-button:disabled {
+  background: #b7c2b3;
+  cursor: default;
+  transform: none;
+}
+
+.day-scroller {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.2rem;
+}
+
+.day-card {
+  flex: 0 0 calc((100% - 3rem) / 7);
   padding: 1rem 0.5rem;
   border-radius: 1rem;
   text-align: center;
   background: #f4f7f2;
   border: 1px dashed rgba(86, 114, 79, 0.4);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 720px) {
-  .placeholder-grid {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
+.day-card:hover {
+  transform: translateY(-2px);
+  border-color: #56724f;
+}
+
+.day-card.selected {
+  background: #56724f;
+  border-color: #56724f;
+  color: #fff;
+}
+
+.day-name,
+.day-date {
+  display: block;
+}
+
+.day-name {
+  font-weight: 700;
+}
+
+.day-date {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #52606d;
+}
+
+.day-card.selected .day-date {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.day-scroller::-webkit-scrollbar {
+  display: none;
 }

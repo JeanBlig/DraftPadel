@@ -32,9 +32,16 @@ h2 {
   gap: 1.5rem;
 }
 
+.booking-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
 @media (min-width: 900px) {
   .page-layout {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr;
     align-items: start;
   }
 }
