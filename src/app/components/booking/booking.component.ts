@@ -47,4 +47,32 @@ export class BookingComponent {
 
     return 'Announce Challenge';
   }
+
+  get eventDescriptionTitle(): string {
+    const court = this.selectedCourt();
+
+    if (court === 'Full Court') {
+      return 'Full Court Booking';
+    }
+
+    if (court) {
+      return 'Challenge Booking';
+    }
+
+    return 'Event Type';
+  }
+
+  get eventDescriptionText(): string {
+    const court = this.selectedCourt();
+
+    if (court === 'Full Court') {
+      return 'You are reserving the entire court for a private booking at your selected day and time.';
+    }
+
+    if (court) {
+      return `You are creating a ${court.toLowerCase()} event. This will announce an open challenge instead of reserving the full court.`;
+    }
+
+    return 'Choose a court setup to see whether this booking will create an open challenge or reserve the full court.';
+  }
 }

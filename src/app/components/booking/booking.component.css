@@ -83,3 +83,27 @@ h2 {
   background: #b7bec6;
   transform: none;
 }
+
+.description-card {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: #f4f7f2;
+  border: 1px solid rgba(86, 114, 79, 0.18);
+}
+
+.description-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #56724f;
+}
+
+.description-text {
+  margin: 0;
+  color: #1f2933;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
