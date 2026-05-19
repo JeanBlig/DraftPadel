@@ -19,7 +19,12 @@
   </div>
 
   <section class="booking-panel">
-    <app-court title="Featured Court" />
-    <app-booking title="Booking" />
+    <app-court title="Featured Court" (courtTypeSelected)="onCourtTypeSelected($event)" />
+    <app-booking
+      title="Booking"
+      [selectedDate]="selectedDate"
+      [selectedTime]="selectedTimeSlot"
+      [selectedCourt]="selectedCourtType"
+    />
   </section>
 </section>

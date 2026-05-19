@@ -42,14 +42,19 @@ h2 {
 }
 
 .split-court {
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   padding: 0;
+  position: relative;
   overflow: hidden;
 }
 
-.court-half {
-  flex: 1 1 50%;
+.court-quarter {
   width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,12 +66,34 @@ h2 {
   transition: background-color 0.2s ease;
 }
 
-.court-half + .court-half {
-  border-top: 1px solid rgba(255, 255, 255, 0.6);
+.court-quarter.selected {
+  background: linear-gradient(135deg, #d85a4f 0%, #a62f25 100%);
 }
 
-.court-half.selected {
-  background: rgba(31, 41, 51, 0.18);
+.split-court.full-court-selected .court-quarter.selected {
+  background: linear-gradient(135deg, #5b86e5 0%, #2f5cc0 100%);
+}
+
+.split-court::before,
+.split-court::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.split-court::before {
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 0.5px);
+  width: 1px;
+}
+
+.split-court::after {
+  left: 0;
+  right: 0;
+  top: calc(50% - 0.5px);
+  height: 1px;
 }
 
 .court-tile span {
